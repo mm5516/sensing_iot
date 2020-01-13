@@ -86,7 +86,7 @@ def job():
     weather_data = get_weather()
     print('hello')
     fieldnames = ['date', 'time','temperature','pressure','cloud cover','summary']
-    table = csv.writer(open('/Users/melisamukovic/Desktop/siot_weather/data.csv', 'a'), lineterminator='\n')
+    table = csv.writer(open('/Users/melisamukovic/Desktop/siot_weather/weather_twitter_data.csv', 'a'), lineterminator='\n')
     table.writerow([weather_data[0], weather_data[1], weather_data[2], weather_data[3], weather_data[4], weather_data[5], twitter_data[0], twitter_data[1]])
     urllib.request.urlopen("https://api.thingspeak.com/update?api_key=73KO6AYSP1Q6CIGW&field1=0"+str(weather_data[2]))
     time.sleep(20)
